@@ -1,0 +1,37 @@
+{% extends "template.html" %}
+{% block content %}
+
+  <header id="hero" class="hero">
+      <a href="/" class="button-8 w-button">Back to Homepage</a>
+
+<br><br><br>
+    <div class="flex-container w-container">
+      <div>
+        <form method="post">
+        {{ form.csrf_token() }}
+        {{ form.hidden_tag() }}
+            <p>
+                Description:
+                {{ form.description() }}
+            </p>
+            <p>
+                Category:
+                {{ form.category() }}
+            </p>
+            <p>
+                Cost:
+                {{ form.cost() }}
+            </p>
+            <p>
+                Date:
+                {{ form.date() }}
+            </p>
+
+        <input value="Submit" class="button-8 w-button" type="submit">
+        </form>
+      </div>
+    </div>
+
+  </header>
+
+{% endblock %}

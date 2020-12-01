@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+{% block content %}
+
+  <header id="hero" class="hero">
+    <div class="flex-container w-container">
+      <div>
+        <h1>Add an expense</h1>
+        <a href="/addExpenses" class="button-8 w-button">Add an Expense</a>
+      </div>
+    </div>
+  </header>
+<section id="feature-section" class="feature-section">
+    <div class="flex-container w-container">
+      <div>
+        <h2>Track your expenses</h2>
+        <p>In total, you have spent {{ expenses }} dollars so far.</p>
+
+        <h2>By category</h2>
+        {% for i in expensesByCategory %}
+          <p> US ${{ i[1] }} in <b>{{ i[0] }}</b>.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
